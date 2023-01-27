@@ -1,3 +1,4 @@
+<?php require("index.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,11 +9,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css" />
     </head>
     <body id="cv" class="<">
         <header>
-            <h1>N</h1>
+            <h1><?= $tab["nom"]; ?> <?= $tab["prenom"]; ?></h1>
             <h2>Intitulé du poste</h2>
         </header>
         <main>
@@ -27,48 +27,48 @@
                             Email
                         </dt>
                         <dd>
-                            <?= $email; ?>
+                            <?= $tab["email"]; ?>
                         </dd>
                         <dt>
                             Téléphone
                         </dt>
                         <dd>
-                            <?= $telephone; ?>
+                            <?= $tab["telephone"]; ?>
                         </dd>
                         <dt>
                             LinkedIn
                         </dt>
                         <dd>
-                            <a href="<?= $linkedin ?>"><?= $linkedin ?></a>
+                            <a href="<?= $tab["linkedin"]; ?>"><?= $tab["linkedin"]; ?></a>
                         </dd>
                         <dt>
                             GitHub
                         </dt>
                         <dd>
-                            <a href="<?= $github ?>"><?= $github ?></a>
+                            <a href="<?= $tab["github"]; ?>"><?= $tab["github"]; ?></a>
                         </dd>
                     </dl>
                 </section>
                 <section>
                     <h4>Biographie</h4>
                     <p>
-                        <?= $bio; ?>
+                        <?= $tab["biographie"]; ?>
                     </p>
                 </section>
                 <section>
                     <h4>Loisirs</h4>
                     <ul>
                         <li>
-                            <?= $loisir1; ?>
+                            <?= $tab2["loisir-1"]; ?>
                         </li>
                         <li>
-                            <?= $loisir2; ?>
+                            <?= $tab2["loisir-2"]; ?>
                         </li>
                         <li>
-                            <?= $loisir3; ?>
+                            <?= $tab2["loisir-3"]; ?>
                         </li>
                         <li>
-                            <?= $loisir4; ?>
+                            <?= $tab2["loisir-4"]; ?>
                         </li>
                     </ul>
                 </section>
@@ -78,49 +78,31 @@
                 <section>
                     <h4>Langages des programmation</h4>
                     <ul>
-                        <?php
+                        <?php foreach($tab["lang"] as $lang) { ?>
                         
-                            foreach($lang as $item)
-                            {
-                        ?>
+                            <li><?= $lang; ?></li>
                         
-                            <li><?= $item; ?></li>
-                        
-                        <?php   
-                            }
-                        ?>
+                        <?php }; ?>
                     </ul>
                 </section>
                 <section>
                     <h4>Frameworks & Librairies</h4>
                     <ul>
-                        <?php
+                        <?php foreach($tab["frameworks"] as $framework) { ?>
                         
-                            foreach($framework as $item)
-                            {
-                        ?>
+                            <li><?= $framework; ?></li>
                         
-                            <li><?= $item; ?></li>
-                        
-                        <?php   
-                            }
-                        ?>
+                        <?php } ?>
                     </ul>
                 </section>
                 <section>
                     <h4>Logiciels</h4>
                     <ul>
-                        <?php
+                        <?php foreach($tab["software"] as $software) { ?>
                         
-                            foreach($software as $item)
-                            {
-                        ?>
+                            <li><?= $software; ?></li>
                         
-                            <li><?= $item; ?></li>
-                        
-                        <?php   
-                            }
-                        ?>
+                        <?php } ?>
                     </ul>
                 </section>
                 <section>
@@ -128,15 +110,11 @@
                     <ul>
                         <?php
                         
-                            foreach($language as $item)
-                            {
-                        ?>
+                            foreach($tab["language"] as $language) { ?>
                         
-                            <li><?= $item; ?></li>
+                            <li><?= $language; ?></li>
                         
-                        <?php   
-                            }
-                        ?>
+                        <?php } ?>
                     </ul>
                 </section>
             </section>
